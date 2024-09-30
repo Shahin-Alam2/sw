@@ -1,0 +1,50 @@
+1. hadoop classpath
+2. javac -classpath "/usr/local/hadoop/etc/hadoop:/usr/local/hadoop/share/hadoop/common/lib/*:/usr/local/hadoop/share/hadoop/common/*:/usr/local/hadoop/share/hadoop/hdfs:/usr/local/hadoop/share/hadoop/hdfs/lib/*:/usr/local/hadoop/share/hadoop/hdfs/*:/usr/local/hadoop/share/hadoop/mapreduce/lib/*:/usr/local/hadoop/share/hadoop/mapreduce/*:/usr/local/hadoop/share/hadoop/yarn:/usr/local/hadoop/share/hadoop/yarn/lib/*:/usr/local/hadoop/share/hadoop/yarn/*:/usr/local/hadoop/contrib/capacity-scheduler/*.jar" -d . /home/hadoop/data/wmapper.java /home/hadoop/data/wreducer.java /home/hadoop/data/driver.java
+
+3. jar cf word_count,jar *.class
+4. hdfs dfs -copyFromLocal /home/hadoop/data/in.txt /
+5. hadoop jar word_count.jar driver /in.txt /output 
+6. hdfs dfs -cat /output/part-r-00000
+
+
+
+Step 1:
+sudo su
+Step2:
+docket start container_name
+docker exec -it container_name bin/bash
+
+step 3:
+hadoop classpath
+
+step4:
+save the classpath
+
+step 5:
+javac -classpath "saved_classpath" -d . /home/hadoom/data/wmapper.java /home/hadopp/data/wreducer.java /home/hadoop/data/driver.java
+
+step 6 : 
+ls
+
+step 7 :
+jar cf word_count.jar *.class
+
+step 8:
+ls
+
+step 9 :
+Create input.txt file from another terminal and input some text : ABC ABC ABC DEF ABC
+
+step 10 :
+
+hdfs dfs -copyFromLocal /home/hadoop/data/in.txt /
+check if in.txt is created in hdfs from browser
+
+
+step 11 :
+
+hadoop jar word_count.jar driver /in.txt /output
+check if output folder is created in hdfs file through browser
+
+step 12 :
+hdfs dfs -cat /output/part-r-00000
